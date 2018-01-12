@@ -18,5 +18,159 @@
     <h4>四级标题</h4>
     <h5>五级标题</h5>
     <h6>六级标题</h6>
+    <p>
+      这里有一个段落，使用的是标签&lt;p&gt;，它是一个块级元素，标签 p 中可以包含其他的一些内容，<em>一个带有强调含义的斜体</em>，<i> 一个为了倾斜而倾斜的斜体</i>
+      <strong>这里还能加粗</strong>（vim 竟然可以把加粗，斜体的样式特殊显示出来，太神奇啦，哈哈哈哈）<a href="#">我是一个链接，点我可以回到顶部，但是这里可能看不出来</a>
+      接下来添加一个列表吧
+    </p>
+    <ul>
+      <li>我是第1个列表项</li>
+      <li>我是第2个列表项</li>
+      <li>我是第3个列表项</li>
+    </ul>
+    <ol>
+      <li>我是第1个有序列表项</li>
+      <li>我是第2个有序列表项</li>
+      <li>我是第3个有序列表项</li>
+    </ol>
+    <dl>
+      <dt>自定义列表1</dt>
+      <dd>啦啦啦</dd>
+      <dt>自定义列表2</dt>
+      <dd>啦啦啦</dd>
+      <dt>自定义列表3</dt>
+      <dd>啦啦啦</dd>
+    </dl>
+    <p> 这个段落里边有个缩写，<abbr title="The United States Of Ameraca">USA</abbr>，设置了<i>title</i> 属性，鼠标 hover 可以看到全称</p>
+    <div>
+      <label for="">一个正常的网站怎么能没有图片呢</label>
+      <img src="http://git.sanbf.cn/favicon.ico" alt="">
+      <img src="http://git.sanbf.cn/favicon.icos" alt="你的网挂了，看不到我的头像了">
+      <div style="border: 1px solid">
+        <img src="http://git.sanbf.cn/favicon.ico" alt=" 我的头像">
+        <figcaption>我的头像</figcaption>
+      </div>
+    </div>
+    <div>
+      关于 &lt;img&gt; 的<i>alt</i>属性，还有一些可以聊聊，这个东西有两个作用：
+      <ol>
+        <li>阅读障碍者可能会使用阅读器，阅读器可以识别这个里边的内容，并阅读出来</li>
+        <li>当网页无法显示，网络原因或者人为地址，这个地方会显示 alt 中的内容，提高用户体验</li>
+      </ol>
+    </div>
+    <div>接下来写一个 table 吧</div>
+    <section>
+      <label for="">有边框：border="1"</label>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>表头 1</th>
+            <th>表头 2</th>
+            <th>表头 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>块 1</td>
+            <td>块 2</td>
+            <td>块 3</td>
+          </tr>
+          <tr>
+            <td>块 1</td>
+            <td>块 2</td>
+            <td>块 3</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <label for="">横向边框：rules="rows"</label>
+      <table rules="rows" border="1">
+        <thead>
+          <tr>
+            <th>表头 1</th>
+            <th>表头 2</th>
+            <th>表头 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>块 1</td>
+            <td>块 2</td>
+            <td>块 3</td>
+          </tr>
+          <tr>
+            <td>块 1</td>
+            <td>块 2</td>
+            <td>块 3</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <label for="">纵向边框：rules="cols"</label>
+      <table rules="cols" border="1">
+        <thead>
+          <tr>
+            <th>表头 1</th>
+            <th>表头 2</th>
+            <th>表头 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>块 1</td>
+            <td>块 2</td>
+            <td>块 3</td>
+          </tr>
+          <tr>
+            <td>块 1</td>
+            <td>块 2</td>
+            <td>块 3</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h6>&lt;a&gt;</h6>
+      <div>
+        <a href="#">普通版</a>
+      </div>
+      <div>
+        <a href="javascript:void(0)">javascript:void(0) 方式禁用标签 a</a>
+      </div>
+      <div>
+        <a href="http://git.sanbf.cn/favicon.ico" download="true">下载我的头像</a>
+      </div>
+      <div>
+        <a href="tel:15871761399">打电话</a>
+      </div>
+      <div>
+        <a href="mailto:baoyeyene@gmail.com">给我发邮件</a>
+      </div>
+      <div>
+        <a href="http://git.sanbf.cn" target="_blank">新标签页中打开页面</a>
+      </div>
+    </section>
+    <div>感觉这一坨东西写的越来越乱啊啊啊啊啊啊</div>
+    <div>
+      &lt;input&gt;标签是一个很神奇的标签，可以做好多东西呢
+      <div>
+        <label for="">文本输入框</label>
+        <input type="text" placeholder="写点啥好呢">
+      </div>
+      <div>
+        <label for="">密码输入框</label>
+        <input type="pasword">
+      </div>
+      <div>
+        <label for="">按钮</label>
+        <input type="button" value="按我按我">
+      </div>
+      <div>
+        <label for="">range</label>
+        <input type="range" value="100">
+      </div>
+    </div>
   </body>
 </html>
