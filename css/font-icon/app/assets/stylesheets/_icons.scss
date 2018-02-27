@@ -1,0 +1,101 @@
+//
+// Icon Font: icons
+//
+
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/icons_91b9515c5e216be14df223e8d7345de8.eot");
+  src: url("../fonts/icons_91b9515c5e216be14df223e8d7345de8.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/icons_91b9515c5e216be14df223e8d7345de8.woff2") format("woff2"),
+       url("../fonts/icons_91b9515c5e216be14df223e8d7345de8.woff") format("woff"),
+       url("../fonts/icons_91b9515c5e216be14df223e8d7345de8.ttf") format("truetype"),
+       url("../fonts/icons_91b9515c5e216be14df223e8d7345de8.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "icons";
+    src: url("../fonts/icons_91b9515c5e216be14df223e8d7345de8.svg#icons") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.i-bar:before,
+.i-close:before,
+.i-double-arrow-left:before,
+.i-double-arrow-right:before,
+.i-down:before,
+.i-elephent:before,
+.i-expand:before,
+.i-home:before,
+.i-intro:before,
+.i-loading:before,
+.i-logo:before,
+.i-pause:before,
+.i-people:before,
+.i-play:before,
+.i-play-o:before,
+.i-return:before,
+.i-right:before,
+.i-up:before,
+.i-wave-right:before,
+.i-write:before {
+  display: inline-block;
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.i-bar:before { content: "\f100"; }
+.i-close:before { content: "\f101"; }
+.i-double-arrow-left:before { content: "\f102"; }
+.i-double-arrow-right:before { content: "\f103"; }
+.i-down:before { content: "\f104"; }
+.i-elephent:before { content: "\f113"; }
+.i-expand:before { content: "\f105"; }
+.i-home:before { content: "\f106"; }
+.i-intro:before { content: "\f107"; }
+.i-loading:before { content: "\f108"; }
+.i-logo:before { content: "\f109"; }
+.i-pause:before { content: "\f10a"; }
+.i-people:before { content: "\f10b"; }
+.i-play:before { content: "\f10c"; }
+.i-play-o:before { content: "\f10d"; }
+.i-return:before { content: "\f10e"; }
+.i-right:before { content: "\f10f"; }
+.i-up:before { content: "\f110"; }
+.i-wave-right:before { content: "\f111"; }
+.i-write:before { content: "\f112"; }
+
+$font-icons-bar: "\f100";
+$font-icons-close: "\f101";
+$font-icons-double-arrow-left: "\f102";
+$font-icons-double-arrow-right: "\f103";
+$font-icons-down: "\f104";
+$font-icons-elephent: "\f113";
+$font-icons-expand: "\f105";
+$font-icons-home: "\f106";
+$font-icons-intro: "\f107";
+$font-icons-loading: "\f108";
+$font-icons-logo: "\f109";
+$font-icons-pause: "\f10a";
+$font-icons-people: "\f10b";
+$font-icons-play: "\f10c";
+$font-icons-play-o: "\f10d";
+$font-icons-return: "\f10e";
+$font-icons-right: "\f10f";
+$font-icons-up: "\f110";
+$font-icons-wave-right: "\f111";
+$font-icons-write: "\f112";
