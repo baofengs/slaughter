@@ -5,4 +5,4 @@ var length = colors.length;
 setInterval(() => {
     body.style.color = colors[i++];
     if (i == length) i = 0;
-}, 100);
+}, 150);
