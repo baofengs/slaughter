@@ -51,6 +51,7 @@ body {
     background-position: fixed;
     letter-spacing: -1px;
     background-color: #fff;
+    background-attachment:fixed
 }
 
 a {
