@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>table</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <style>
+        .m-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid;
+            font-size: 16px;
+            font-weight: normal;
+            text-align: center;
+        }
+        .m-table thead {
+            background: lightskyblue;
+        }
+        .m-table th,
+        .m-table td {
+            border: 1px solid;
+            padding: 10px;
+        }
+        .m-table tr:nth-child(even) {
+            background-color: #ddd;
+        }
+        .m-table tbody tr:hover {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <table class="m-table">
+        <thead>
+            <tr>
+                <th>Tom</th>
+                <th>Jim</th>
+                <th>Jann</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>foo 1</td>
+                <td>foo 2</td>
+                <td>foo 3</td>
+            </tr>
+            <tr>
+                <td>foo 1</td>
+                <td>foo 2</td>
+                <td>foo 3</td>
+            </tr>
+            <tr>
+                <td>foo 1</td>
+                <td>foo 2</td>
+                <td>foo 3</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
