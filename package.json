@@ -9,6 +9,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^2.18.13"
+    "browser-sync": "^2.18.13",
+    "chalk": "^2.4.0",
+    "tracer": "^0.8.12"
   }
 }
