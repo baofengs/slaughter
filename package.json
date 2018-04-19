@@ -11,6 +11,7 @@
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "chalk": "^2.4.0",
+    "https": "^1.0.0",
     "tracer": "^0.8.12"
   }
 }
