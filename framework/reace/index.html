@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>react</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="//unpkg.com/react/umd/react.development.js"></script>
+    <script src="//unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="//unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type="text/babel">
+        const rootElement = document.querySelector('#root');
+        // ==== use naive js
+        // const container = document.createElement('div');
+        // container.className = 'container';
+        // container.innerText = 'Hello React~';
+        // rootElement.appendChild(container);
+        // React.createElement('div', {className: 'container'}, 'Hello React~');
+        // ==== use React
+        // const element = React.createElement('div', {className: 'container foo'}, 'hello react~');
+        // const element = React.createElement(
+        //         'div', 
+        //         { 
+        //             className: 'container foo', 
+        //             children: [
+        //                 'foo bar',
+        //                 React.createElement('div', {className: 'children'}, 'this is child....')
+        //             ]
+        //         }
+        //     );
+        // ==== use jsx
+        // const element = <div className="container">hello react BY JSX</div>;
+        // ==== use jsx with variables
+        // const content = 'hello react BY JSX with variable';
+        // const element = <div className="container">{(() => content)()}</div>
+        // ==== use jsx with variable && repalce className by variable
+        // const content = 'hello react BY JSX with variable && repalce className by variable'
+        // const myClassName = 'container';
+        // const element = <div className={myClassName + '__hi_there'}>{(() => content)()}</div>
+        // === set attribute with ...
+        // const props = {
+        //     className: 'container',
+        //     children: 'set attriabute with ...'
+        // };
+        // const element = <div {...props} />
+        // === create simple component before
+        // const message = <div className="item">hello react of create simple component before</div>;
+        // const message = (props) => <div className="item">{props.msg}</div>
+        // const element = 
+        //     <div className="container">
+        //         {message({msg: 'hello world'})}
+        //         {message({msg: 'this is a simple component....'})}
+        //     </div>;
+        // ==== simple component
+        const Message = (props) => <div className="item">{props.children}{props.msg}</div>
+        const element = 
+            <div className="container">
+                <Message msg="hello here" />
+                <Message children="hi, you" />
+                <Message>common way say hi</Message>
+                <Message>
+                    how do you do?
+                    <Message>How do you do...</Message>
+                </Message>
+                {React.createElement(Message, {msg: 'hello there'})}
+                {React.createElement(Message, {msg: 'hello world'})}
+            </div>
+        console.log(element);
+        ReactDOM.render(element, rootElement);
+    </script>
+</body>
+
+</html>
