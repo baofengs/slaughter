@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>glare-demo</title>
+    <style>
+        .wrapper {
+            position: absolute;
+            top: 0;
+            left: calc(50% - 150px);
+            width: 300px;
+            height: 200px;
+            margin: 50px auto;
+            border: 1px solid;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0099F7 , #F11712);
+        }
+        .inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            pointer-events: none;
+            /* background-image: radial-gradient(circle closest-side, aqua, transparent); */
+            background-image: radial-gradient(circle closest-side, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+            width: 600px;
+            height: 800px;
+            transform: translate(-50%, -50%);
+            /* transition: all .5s; */
+            /* transform-origin: (0% 0%); */
+            opacity: 0;
+            /* border: 1px solid; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="inner">
+        </div>
+    </div>
+    <script>
+        const wrapper = document.querySelector('.wrapper');
+        const inner = document.querySelector('.inner');
+        function onGlare (e) {
+            const clientX = e.clientX;
+            const clientY = e.clientY;
+            const pageX = e.pageX;
+            const pageY = e.pageY;
+            console.log(e.pageX, e.pageY);
+            const width = this.offsetWidth;
+            const height = this.offsetHeight;
+            const rect = this.getBoundingClientRect();
+            console.log(rect);
+            const top = rect.top;
+            const left = rect.left;
+            const offsetLeft = this.offsetLeft;
+            const offsetTop = this.offsetTop;
+            setTimeout(() => {
+                inner.style.transition = 'all .05s';
+            }, 30);
+            inner.style.opacity = 1;
+            
+            Object.assign(inner.style, {
+                // width: width * 2 + 'px',
+                // height: height * 2 + 'px',
+                left: (pageX - offsetLeft) + 'px',
+                top: (pageY - offsetTop) + 'px'
+            })
+            // inner.style.left = (clientX - left) + 'px';
+            // inner.style.top = (clientY - top) + 'px';
+        }
+
+        // inner.addEventListener('mousemove', onGlare);
+        wrapper.addEventListener('mousemove', onGlare);
+        wrapper.addEventListener('mouseleave', () => {
+            inner.style.transition = 'all .5s';
+            inner.style.opacity = 0;
+        })
+    </script>
+</body>
+
+</html>

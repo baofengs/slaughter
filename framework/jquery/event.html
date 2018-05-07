@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Event</title>
+    <script src="./jquery-3.3.1.js"></script>
+</head>
+<body>
+    <header>jQuery Event</header>
+    <button>click me</button>
+    <ul class="container">
+        <li class="item item-1">item 1</li>
+        <li class="item item-2">item 2</li>
+        <li class="item item-3">item 3</li>
+        <li class="item item-4">item 4</li>
+        <li class="item item-5">item 5</li>
+    </ul>
+    <script>
+        // $('li').each(function (index, item) {
+        //     $(this).on('click', function () {
+        //         console.log($(this).text());
+        //     });
+        // });
+        // $('ul').on('click', 'li', {foo: 'bar'}, function (e) {
+        //     console.log($(this).text());
+        //     console.log(e.data);
+        // });
+        $('<li>appended item</li>').appendTo('ul');
+        $('.item.item-4').clone().appendTo('.container');
+        $('.item.item-1').on('click', function () {
+            $(this).hide();
+        });
+        $('.item.item-2').on('click', function () {
+                $('.item.item-1').fadeToggle(300, 'linear', () => {
+                    console.log('foo...');
+                });
+            });
+        $('button').on('click', function () {
+            $('ul').slideToggle('fast', 'linear', function () {
+                console.log('slide done...');
+            })
+        })
+    </script>
+</body>
+</html>

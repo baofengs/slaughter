@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery function</title>
+    <script src="./jquery-3.3.1.js"></script>
+</head>
+<body>
+    <header>jQuery function</header>
+    <ul>
+        <li class="item item-1">item 1</li>
+        <li class="item item-2">item 2</li>
+        <li class="item item-3">item 3</li>
+        <li class="item item-4">item 4</li>
+        <li class="item item-5">item 5</li>
+    </ul>
+    <div class="container">
+        <div class="i">
+            nice
+            <div class="child">this is child</div>
+        </div>
+    </div>
+    <script>
+        // each
+        $('li').each(function (index) {
+            console.log(`${index}: ${$(this).text()}`);
+        });
+        const obj = {
+            name: 'Tom',
+            sex: 'male',
+            age: 25,
+            deep: {
+                name: 'bar',
+                age: 13
+            }
+        };
+        jQuery.each(obj, function (index, item) {
+            console.log(index + ': ' + item);
+        });
+        const arr = [
+            {
+                name: 'Tom',
+                sex: 'male',
+                age: 25
+            },
+            {
+                name: 'Jann',
+                sex: 'female',
+                age: 24
+            }
+        ];
+        jQuery.each(arr, function (index, item) {
+            console.log(index + ': ' + JSON.stringify(item));
+        });
+        const res = $('li').map((index, item) => {
+            return $(item).text(`${$(item).text()}, index: ${index}`);
+        });
+        // console.log(res);
+        const addition = {
+            name: 'foo',
+            eat: function () {
+                console.log('eating...');
+            }
+        };
+        const newObj = jQuery.extend(true, obj, addition);
+        console.log(newObj, obj);
+        const index = $('li').index($('.item-3'));
+        console.log(index);
+        $('.child').clone().appendTo('.i');
+        $('.child').clone().appendTo('.i');
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery css & attr</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <style>
+        .foo {
+            border: 1px dotted;
+            list-style: none;
+            display: inline-block;
+        }
+        .foo-border {
+            border: 2px solid fuchsia;
+        }
+    </style>
+</head>
+<body>
+    <header>jquery's css & attr</header>
+    <hr>
+    <div id="app">
+        <form action="#">
+            <input type="text">
+            <button class="form-button1">click me</button>
+            <div class="result-form1"></div>
+        </form>
+        <div>
+            <div class="attr" title="data">div with attr data</div>
+            <!-- <div class="attr">div with attr data</div> -->
+            <!-- <div class="attr">div with attr data</div> -->
+        </div>
+        <div class="css">
+            <span style="color: fuchsia;">哈哈哈哈哈</span>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>item 4</li>
+                <li>item 5</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const input1 = $('input[type="text"]');
+        const button1 = $('button.form-button1');
+        button1.on('click', (e) => {
+            e.preventDefault();
+            $('.result-form1').text(input1.val());
+            setTimeout(() => {
+                input1.val('changed...');
+            }, 3000);
+        });
+        const dataText = $('.attr').attr('title');
+        console.log(dataText);
+        $('.attr').attr('data', 'xxxx');
+        $('.attr').removeAttr('title');
+        const spanColor = $('.css>span').css('color');
+        console.log('span color: ', spanColor);
+        $('.css>span').css('background-color', '#ccc');
+        $('.css>span').css('padding', '+=10');
+        $('.css>span').css({
+            "font-size": "20px",
+            "font-weight": "bold"
+        });
+        $('li').addClass('foo').addClass('foo-border');
+        $('li').css('padding', '10px');
+        setTimeout(() => {
+            $('li').removeClass('foo-border');
+        }, 3000);
+        console.log('li has class foo-border: ', $('li').hasClass('foo-border'));
+        setInterval(() => {
+            $('li').toggleClass('foo-border');
+        }, 1000);
+    </script>
+</body>
+</html>

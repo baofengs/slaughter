@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dom</title>
+    <script src="./jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="item item-1">item 1</div>
+            <div class="item item-2">item 2</div>
+            <div class="item item-3">item 3</div>
+            <div class="item item-4">item 4</div>
+            <div class="item item-5">item 5</div>
+        </div>
+    </div>
+    <script>
+        const container = $('.container');
+        const domObj = $(
+            `
+            <div class="cloned-container">
+                <div class="clone-item">
+                    this is cloned elements
+                </div>
+            </div>
+            `
+        );
+        console.log(domObj);
+        container.append(domObj);
+        container.append(document.createTextNode('hello'));
+        container.append('<strong>this is strong</strong>');
+        setTimeout(() => {
+            container.append($('strong'));
+        }, 0);
+        domObj.appendTo($('.container'));
+        $('<div>prepend</div>').prependTo('.container');
+        container.prepend('<div>container prepend...</div>');
+        container.before('<div>container before...</div>');
+        container.after('<div>container after...</div>');
+        $('<div>after to container</div>').insertAfter($('.container'));
+        // container.empty();
+        $('.container>.item.item-5').remove();
+        // $('.container>.item').wrap('<a style="display: block;" href="#"></a>')
+        // $('.container>.item').wrapAll('<a href="#" style="display: block;"></a>')
+        // setTimeout(() => {
+        //     $('.item').unwrap();
+        // }, 3000);
+        const innerHtml = container.html();
+        console.log('inner html of container:', innerHtml);
+        container.html('<strong>container\'s inner html replaced to this...</strong>')
+    </script>
+</body>
+</html>

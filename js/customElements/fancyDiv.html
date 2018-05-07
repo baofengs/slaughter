@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fancy div</title>
+    <style>
+        .fancy {
+            display: block;
+            /* width: 30px; */
+            /* height: 50px; */
+            line-height: 20px;
+            padding: 15px;
+            width: 75px;
+            margin: 50px auto;
+            background: linear-gradient(135deg, #0099F7, #F11712);
+            position: relative;
+            overflow: hidden;
+            color: #fdfdfd;
+        }
+    </style>
+</head>
+
+<body>
+    <fancy-div>hover me</fancy-div>
+    <fancy-button>click me</fancy-button>
+    <script>
+        class FancyDiv extends HTMLElement {
+            constructor() {
+                super();
+                this.classList.add('fancy');
+                this.child = this.initFancy();
+                this.addEventListener('mousemove', e => this.drawRipple(e));
+                this.addEventListener('mouseleave', e => this.onLeave(e));
+            }
+
+            initFancy() {
+                const child = document.createElement('div');
+                const parentWidth = this.offsetWidth;
+                const parentHeight = this.offsetHeight;
+                Object.assign(child.style, {
+                    position: 'absolute',
+                    background: 'radial-gradient(circle closest-side, aqua, transparent)',
+                    transform: 'translate(-50%, -50%)',
+                    opacity: 0,
+                    width: `${parentWidth * 2}px`,
+                    height: `${parentHeight * 2}px`,
+                });
+                this.appendChild(child);
+                return child;
+            }
+
+            onLeave(e) {
+                this.child.style.opacity = 0;
+            }
+
+            // Material design ripple animation.
+            drawRipple(e) {
+                const pageX = e.pageX;
+                const pageY = e.pageY;
+                const offsetTop = this.offsetTop;
+                const offsetLeft = this.offsetLeft;
+                Object.assign(this.child.style, {
+                    opacity: 1,
+                    left: (pageX - offsetLeft) + 'px',
+                    top: (pageY - offsetTop) + 'px'
+                });
+            }
+        }
+
+        customElements.define('fancy-div', FancyDiv);
+
+    </script>
+</body>
+
+</html>

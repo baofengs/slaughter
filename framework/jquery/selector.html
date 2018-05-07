@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>This is playground of jQuery</h1>
+        <h2>Try to do something</h2>
+        <h3>If you wanner be faster, go alone</h3>
+    </header>
+    <div id="app">
+        <ul class="container">
+            <li class="item item-1">item 1, index 0</li>
+            <li class="item item-2">item 2, index 1</li>
+            <li class="item item-3">item 3, index 2</li>
+            <li class="item item-4">item 4, index 3</li>
+            <li class="item item-5">
+                item 5, index 4
+                <div class="item">son of last item</div>
+            </li>
+            <li class="item">
+                hiddened item:
+                <span class="find-me" style="display: none;">find me</span>
+                <span class="find-me">I'm here</span>
+            </li>
+        </ul>
+    </div>
+    <script>
+        // // id selector
+        // const app = $('#app');
+        // console.log('app: ', app);
+        // // container > item
+        // const item = $('.container > .item');
+        // console.log('item: ', item);
+        // const allItem = $('.container .item');
+        // console.log('all item: ', allItem);
+        // even item
+        // const evenItem = $('.item:even');
+        // console.log('even item: ', evenItem);
+        // console.log('odd item: ', $('.container > .item:odd'));
+        // item eq 3: the 4th item in container
+        // const itemEq3 = $('.container .item:eq(3)');
+        // console.log('itemEq3: ', itemEq3);
+        // const itemGt2 = $('.container .item:gt(2)');
+        // console.log('item gt 2: ', itemGt2);
+        // // header
+        // const header = $(':header')
+        // console.log('header: ', header);
+        // hidden item
+        // const hiddenItem = $('.item>*:hidden');
+        // const hiddenItem = $('.find-me:hidden');
+        // console.log('hiddenItem: ', hiddenItem);
+        // const getItem = $('.container>.item')[2];
+        // const getItemEq2 = $('.container>.item').eq(2);
+        // console.log('get item: ', getItem, getItemEq2);
+        // const justGet = $('.container>.item').get();
+        // console.log('just get: ', justGet);
+        // next
+        const itemEq2 = $('.container>.item:eq(2)');
+        // const next = $('.container>.item:eq(2)').next();
+        // console.log('next of item 3: ', next);
+        // const preOf2 = $('.container>.item:eq(2)').prev();
+        // console.log('pre of 2: ', preOf2);
+        // console.log('item 2 of next all: ', itemEq2.nextAll());
+        // console.log('item 2 of pre all: ', itemEq2.prevAll());
+        // console.log('all siblings of item 2: ', itemEq2.siblings());
+        // console.log('parent of item 2: ', itemEq2.parent());
+        // console.log('all parents of item2: ', itemEq2.parents());
+        // console.log('parent #app of item2: ', itemEq2.parents('#app'));
+        // const itemParent = $('.container>.item').last().prev();
+        // console.log('chidren of itemParent: ', itemParent.children());
+        console.log('hidden item: ', $('.container>.item').last().children('.find-me:hidden')[0].textContent);
+    </script>
+</body>
+
+</html>
