@@ -144,7 +144,7 @@ var VanillaTilt = (function () {
 
             this.event = event;
             this.updateCall = requestAnimationFrame(this.updateBind);
-            console.log(this.updateCall);
+            // console.log(this.updateCall);
         }
 
         /**
@@ -216,7 +216,7 @@ var VanillaTilt = (function () {
         }
 
         /**
-         * 更新元素位置？
+         * 确定元素位置
          */
         updateElementPosition() {
             // 方法返回元素的大小及其相对于视口的位置
@@ -340,6 +340,7 @@ var VanillaTilt = (function () {
          * 原因：不移除会导致每次移动都有一个 duration，从而导致动画卡顿
          * speed 值不宜过大，长时间不清除transition，同样会导致动画卡顿
          * 这里边有一个节流? OR 防抖?
+         * 这个是防抖
          */
         setTransition() {
             clearTimeout(this.transitionTimeout);

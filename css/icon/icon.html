@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>icon</title>
+    <style>
+        *,
+        *::before *::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        div.icon {
+            width: 200px;
+            height: 200px;
+            border: 1px dashed;
+            position: relative;
+        }
+
+        .icon::before {
+            content: 'f';
+            position: absolute;
+            bottom: 0;
+            right: 10.33333%;
+            font-size: 175px;
+            border: 1px solid;
+            line-height: 1;
+        }
+
+        .icon::after {
+            content: 'f';
+            border: 1px solid;
+            font-size: 265px;
+            line-height: 1;
+            transform: rotateZ(-45deg) rotateX(56deg) rotateY(26deg);
+            position: absolute;
+            top: 4px;
+            perspective: 67px;
+            right: 39px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icon">
+
+
+    </div>
+</body>
+
+</html>
