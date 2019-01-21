@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        .drawing {
+            border: 1px dashed;
+            padding: 0;
+            margin: 0 5px;
+        }
+        .container {
+            width: 700px;
+            margin: 0 auto;
+            /* border: 1px dotted; */
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <canvas class="drawing" id="drawing1" width="200" height="200">canvas not supporting</canvas>
+        <canvas class="drawing" id="drawing2" width="200" height="200">canvas not supporting</canvas>
+        <canvas class="drawing" id="drawing3" width="200" height="200">canvas not supporting</canvas>
+    </div>
+    <video src="http://vd3.bdstatic.com/mda-ie1trg68ibzjzgsp/mda-ie1trg68ibzjzgsp.mp4?from=groupmessage&isappinstalled=0"></video>
+    <script>
+        const drawing1 = function () {
+            const drawing = document.querySelector('#drawing1');
+            console.log('demo01: fill && stroke');
+            if (drawing.getContext) {
+                const context = drawing.getContext('2d');
+                context.fillStyle = '#64a';
+                context.strokeStyle = '#00ff00';
+                context.fillRect(10, 10, 50, 50);
+                context.fillStyle = 'rgba(0, 0, 255, .5)';
+                context.fillRect(30, 30, 50, 50);
+                context.strokeRect(50, 50, 50, 50);
+                context.strokeStyle = '#000';
+                context.strokeRect(70, 70, 50, 50);
+                context.clearRect(40, 40, 10, 10);
+            }
+        }
+
+        const drawing2 = function () {
+            const drawing = document.querySelector('#drawing2');
+            console.log('draw02: path')
+            if (drawing.getContext) {
+                const context = drawing.getContext('2d');
+                context.beginPath();
+                context.arc(100, 100, 99, 0, 2 * Math.PI, false);
+
+                context.moveTo(194, 100);
+                context.arc(100, 100, 94, 0, 2 * Math.PI, true);
+
+                context.moveTo(100, 100);
+                context.lineTo(100, 15);
+
+                context.moveTo(100, 100);
+                context.lineTo(35, 100);
+
+                // context.arcTo(10, 10, 50, 50, 50);
+
+                // context.rect(100, 100, 50, 50);
+
+                console.log(context.isPointInPath(100, 150));
+
+                context.font = 'bold 14px Arial';
+                context.textAlign = "center";
+                context.textBaseline = 'middle';
+                context.fillText('12', 100, 20);
+
+                context.textAlign = 'start';
+                context.fillText('12', 100, 40);
+
+                context.textAlign = 'end';
+                context.fillText('12', 100, 60);
+
+                context.stroke();
+
+            }
+        }
+
+        const drawing3 = function () {
+            const drawing = document.querySelector('#drawing3');
+            console.log('draw03: text');
+            if (drawing.getContext) {
+                const context = drawing.getContext('2d');
+                let fontSize = 100;
+                context.fillStyle = '#64a'
+                context.font = fontSize + 'px Arial';
+                context.textAlign = 'start';
+                context.textBaseline = 'bottom';
+                const text = 'Hello Canvas';
+                const mt = context.measureText(text);
+                console.log(mt);
+                while (context.measureText(text).width > 140) {
+                    fontSize--;
+                    context.font = fontSize + 'px Arial';
+                }
+                context.fillText(text, 10, 50);
+                context.fillText(`Font size is ${fontSize}px`, 10, 80);
+                context.fillText(`measureis ${context.measureText(text).width}`, 10, 120);
+            }
+        }
+        
+
+        drawing1();
+        drawing2();
+        drawing3();
+        
+        
+    </script>
+</body>
+</html>
